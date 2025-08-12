@@ -23,11 +23,11 @@ PRINT_DEBUG("line {} is not the crash", 19)
 And here's what all of that looks like when printed to the console:
 <details>
   <summary>Light Color Scheme</summary>
-  <picture><img src="/images/printing_tests_light.png"/></picture>
+  <img width="1373" height="100" alt="printing_tests_light" src="https://github.com/user-attachments/assets/b12c9db1-1017-42c4-8ed6-3e45f3cd13d7" />
 </details>
 <details>
   <summary>Dark Color Scheme</summary>
-  <picture><img src="/images/printing_tests_dark.png"/></picture>
+  <img width="1375" height="99" alt="printing_tests_dark" src="https://github.com/user-attachments/assets/517a6dde-88ed-4250-9fb9-ead8da46676d" />
 </details>
 
 ## colors.hpp
