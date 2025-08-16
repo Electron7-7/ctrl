@@ -32,9 +32,7 @@ And here's what all of that looks like when printed to the console:
 </details>
 
 ## colors.hpp
-This header file provides useful namespace-like structs that contain hardcoded ANSI color codes; `Color` is the parent struct, containing the ANSI code which resets all text back to normal and two sub-structs. These structs hold the ANSI codes for foreground (`Front`) and background (`Back`) colors, in both bold and normal weights. It's not very modular and it's pretty hardcoded, but I think that makes it more direct and easier to use.
-
-As a bonus, all the colors use `constexpr const char*`, requiring no extra headers to be included!
+This header file provides useful namespace-like structs that contain hardcoded ANSI color codes; `Style` contains the ANSI codes for resetting all styles and colors, setting the foreground to either bold or dim, and resetting the foreground to a normal weight (not bold, not dim). `Foreground` contains the ANSI codes for 8-16 foreground colors, while `Background` contains the codes for the background versions. Finally, each struct has an alias for people who don't wanna type allat (`sty`, `fg`, `bg`).
 
 ## safe_return.hpp
 `SafeReturn` and `SafeStatus` are my solutions to not being able to return an object *and* a status message at the same time. They're fairly high level, yes, but they *should* also be fairly lightweight. `SafeStatus` is just a wrapper for an unsigned short and a string, the short being the status' ID and the string being its name (useful for things like printouts). The `Status` struct acts like a namespace and is where you can define your custom `SafeStatus` objects. If you notice the two I've included, 'NO_ERROR' and 'ERROR_GENERIC', they're bitmasked; this means you can combine/compare statuses with bit operators (`|`, `|=`, `&`, `&=`, etc), which makes them double as bit flags/masks if needed. If you rack up a tremendous number of status messages and need more than an unsigned short can contain (that's 65535 unique statuses!), you can easily do so via the `StatusID` typedef that I've included at the top of the header file.
