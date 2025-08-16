@@ -1,55 +1,45 @@
 #ifndef COLORS_H
 #define COLORS_H
 
-struct Color
+#include <string>
+
+struct Style
 {
-    constexpr static const char* Reset = "\x1b[0m";
-
-    struct Front
-    {
-        constexpr static const char* Black   = "\x1b[30m";
-        constexpr static const char* Red     = "\x1b[31m";
-        constexpr static const char* Green   = "\x1b[32m";
-        constexpr static const char* Yellow  = "\x1b[33m";
-        constexpr static const char* Blue    = "\x1b[34m";
-        constexpr static const char* Magenta = "\x1b[35m";
-        constexpr static const char* Cyan    = "\x1b[36m";
-        constexpr static const char* White   = "\x1b[37m";
-        constexpr static const char* Default = "\x1b[39m";
-
-        constexpr static const char* BlackBold   = "\x1b[1;30m";
-        constexpr static const char* RedBold     = "\x1b[1;31m";
-        constexpr static const char* GreenBold   = "\x1b[1;32m";
-        constexpr static const char* YellowBold  = "\x1b[1;33m";
-        constexpr static const char* BlueBold    = "\x1b[1;34m";
-        constexpr static const char* MagentaBold = "\x1b[1;35m";
-        constexpr static const char* CyanBold    = "\x1b[1;36m";
-        constexpr static const char* WhiteBold   = "\x1b[1;37m";
-        constexpr static const char* DefaultBold = "\x1b[1;39m";
-    };
-
-    struct Back
-    {
-        constexpr static const char* Black   = "\x1b[40m";
-        constexpr static const char* Red     = "\x1b[41m";
-        constexpr static const char* Green   = "\x1b[42m";
-        constexpr static const char* Yellow  = "\x1b[43m";
-        constexpr static const char* Blue    = "\x1b[44m";
-        constexpr static const char* Magenta = "\x1b[45m";
-        constexpr static const char* Cyan    = "\x1b[46m";
-        constexpr static const char* White   = "\x1b[47m";
-        constexpr static const char* Default = "\x1b[49m";
-
-        constexpr static const char* BlackBold   = "\x1b[2;40m";
-        constexpr static const char* RedBold     = "\x1b[2;41m";
-        constexpr static const char* GreenBold   = "\x1b[2;42m";
-        constexpr static const char* YellowBold  = "\x1b[2;43m";
-        constexpr static const char* BlueBold    = "\x1b[2;44m";
-        constexpr static const char* MagentaBold = "\x1b[2;45m";
-        constexpr static const char* CyanBold    = "\x1b[2;46m";
-        constexpr static const char* WhiteBold   = "\x1b[2;47m";
-        constexpr static const char* DefaultBold = "\x1b[2;49m";
-    };
+    static constexpr std::string Reset = "\x1b[0m"; // Use this to reset everything back to normal
+    static constexpr std::string Bold  = "\x1b[1m";
+    static constexpr std::string Dim   = "\x1b[2m";
+    static constexpr std::string Norm  = "\x1b[22m";
 };
+
+struct Foreground
+{
+    static constexpr std::string Black   = "\x1b[30m";
+    static constexpr std::string Red     = "\x1b[31m";
+    static constexpr std::string Green   = "\x1b[32m";
+    static constexpr std::string Yellow  = "\x1b[33m";
+    static constexpr std::string Blue    = "\x1b[34m";
+    static constexpr std::string Magenta = "\x1b[35m";
+    static constexpr std::string Cyan    = "\x1b[36m";
+    static constexpr std::string White   = "\x1b[37m";
+    static constexpr std::string Default = "\x1b[39m";
+};
+
+struct Background
+{
+    static constexpr std::string Black   = "\x1b[40m";
+    static constexpr std::string Red     = "\x1b[41m";
+    static constexpr std::string Green   = "\x1b[42m";
+    static constexpr std::string Yellow  = "\x1b[43m";
+    static constexpr std::string Blue    = "\x1b[44m";
+    static constexpr std::string Magenta = "\x1b[45m";
+    static constexpr std::string Cyan    = "\x1b[46m";
+    static constexpr std::string White   = "\x1b[47m";
+    static constexpr std::string Default = "\x1b[49m";
+};
+
+// If you really can't stand typing allat:
+typedef Style sty;
+typedef Foreground fg;
+typedef Background bg;
 
 #endif // COLORS_H
