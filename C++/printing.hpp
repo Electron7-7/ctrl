@@ -4,9 +4,9 @@
 #include <print> // IWYU pragma: keep
 
 // IMPORTANT - These labels do not set the text color back to normal! If you use them manually, make sure to do that!
-constexpr const char* __ERROR    = "\x1b[1;31m[ERROR]";   // Color hardcoded to "bold red"
-constexpr const char* __WARNING  = "\x1b[1;33m[WARNING]"; // Color hardcoded to "bold yellow"
-constexpr const char* __DEBUG    = "\x1b[1;39m[DEBUG]";   // Color hardcoded to "bold default"
+constexpr const char* __ERROR    = "\x1b[1;31m[ERROR]";   // Sets text color to "bold red"
+constexpr const char* __WARNING  = "\x1b[1;33m[WARNING]"; // Sets text color to "bold yellow"
+constexpr const char* __DEBUG    = "\x1b[1;36m[DEBUG]";   // Sets text color to "bold cyan"
 constexpr const char* __RESET_NL = "\x1b[0m\n";           // Reset all changes & add a newline
 
 /*
